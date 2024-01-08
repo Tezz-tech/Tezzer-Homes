@@ -7,7 +7,7 @@ import DevelopersDesc from './Pages/DevelopersDesc'
 
 function App() {
   return (
-    <div className="App">
+    <div className="container">
         <BrowserRouter>
             <Routes>
                 <Route path='/' element={<Home/>}/>
