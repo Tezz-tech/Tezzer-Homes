@@ -7,7 +7,6 @@ function Home() {
             <button>Explore Properties</button>
         </div>
         <div className="right">
-
         </div>
     </div>
   );

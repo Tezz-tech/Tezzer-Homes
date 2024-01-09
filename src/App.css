@@ -1,3 +1,16 @@
 .precious-nav{
   display: flex;
+  width: 100%;
+  justify-content: space-between;
+  height: 800px;
+}
+
+.precious-nav .left{
+  width: 30%;
+}
+
+.precious-nav .right{
+  width: 60%;
+  background-image: url(../src/IMG/Rectangle\ 115.png);
+  background-repeat:no-repeat ;
 }
