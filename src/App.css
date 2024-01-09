@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-*{
+
+* {
   font-family: 'Montserrat', sans-serif;
 }
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -16,7 +18,7 @@
   display: flex;
 }
 
-.navbar-left h2{
+.navbar-left h2 {
   font-size: 40px;
   padding-left: 20px;
   margin-top: 40px;
@@ -40,4 +42,224 @@
   line-height: 133.4%;
   letter-spacing: 0.11px;
   text-decoration: none;
+}
+
+.precious-one {
+  display: flex;
+  justify-content: space-between;
+  /* width: 100%; */
+  height: 800px;
+}
+
+.precious-one .right {
+  background-image: url(./IMG/img1.jpeg);
+  width: 60%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.precious-one .left {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.precious-one .left h1 {
+  color: #545454;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 133.4%;
+  padding: 0px 0px 0px 60px;
+}
+
+.precious-one .left button {
+  border-radius: 75px;
+  background: #e0e0e0;
+  box-shadow: 41px 41px 82px #868686,
+    -41px -41px 82px #ffffff;
+  background-color: white;
+  padding: 15px 35px;
+  border: none;
+}
+
+.fancy {
+  background-color: transparent;
+  border: 2px solid #000;
+  border-radius: 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin: 0;
+  outline: none;
+  overflow: visible;
+  padding: 1.25em 2em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  transition: all 0.3s ease-in-out;
+  user-select: none;
+  font-size: 13px;
+}
+
+.fancy::before {
+  content: " ";
+  width: 1.5625rem;
+  height: 2px;
+  background: black;
+  top: 50%;
+  left: 1.5em;
+  position: absolute;
+  transform: translateY(-50%);
+  transform-origin: center;
+  transition: background 0.3s linear, width 0.3s linear;
+}
+
+.fancy .text {
+  font-size: 1.5em;
+  line-height: 1.33333em;
+  padding-left: 2em;
+  display: block;
+  text-align: left;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: black;
+}
+
+.fancy .top-key {
+  height: 2px;
+  width: 1.5625rem;
+  top: -2px;
+  left: 0.625rem;
+  position: absolute;
+  background: #e8e8e8;
+  transition: width 0.5s ease-out, left 0.3s ease-out;
+}
+
+.fancy .bottom-key-1 {
+  height: 2px;
+  width: 1.5625rem;
+  right: 1.875rem;
+  bottom: -2px;
+  position: absolute;
+  background: #e8e8e8;
+  transition: width 0.5s ease-out, right 0.3s ease-out;
+}
+
+.fancy .bottom-key-2 {
+  height: 2px;
+  width: 0.625rem;
+  right: 0.625rem;
+  bottom: -2px;
+  position: absolute;
+  background: #e8e8e8;
+  transition: width 0.5s ease-out, right 0.3s ease-out;
+}
+
+.fancy:hover {
+  color: white;
+  background: black;
+}
+
+.fancy:hover::before {
+  width: 0.9375rem;
+  background: white;
+}
+
+.fancy:hover .text {
+  color: white;
+  padding-left: 1.5em;
+}
+
+.fancy:hover .top-key {
+  left: -2px;
+  width: 0px;
+}
+
+.fancy:hover .bottom-key-1,
+.fancy:hover .bottom-key-2 {
+  right: 0;
+  width: 0;
+}
+
+.precious-two {
+  display: flex;
+  margin: 50px 20px;
+  justify-content: space-evenly;
+}
+
+.precious-two .card {
+  width: 20%;
+  border-radius: 30px;
+  background: #ffffff;
+  box-shadow: 15px 15px 30px #bebebe,
+    -15px -15px 30px #ffffff;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.precious-two .card h3 {
+  font-size: 45px;
+}
+.precious-two .card img {
+  height: 120px;
+}
+
+.precious-two .card p {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.precious-two .card span {
+  color: #12B7B6;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.precious-two .card button {
+  margin: 30px 0px;
+  padding: 1em 2em;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #2c9caf;
+  transition: all 1000ms;
+  font-size: 19px;
+  position: relative;
+  overflow: hidden;
+  outline: 2px solid #2c9caf;
+}
+
+.precious-two .card button:hover {
+  color: #ffffff;
+  transform: scale(1.1);
+  outline: 2px solid #70bdca;
+  box-shadow: 4px 5px 17px -4px #268391;
+}
+
+.precious-two .card button::before {
+  content: "";
+  position: absolute;
+  left: -50px;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background-color: #2c9caf;
+  transform: skewX(45deg);
+  z-index: -1;
+  transition: width 1000ms;
+}
+
+.precious-two .card button:hover::before {
+  width: 250%;
 }
