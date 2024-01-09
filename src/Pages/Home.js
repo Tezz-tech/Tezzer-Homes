@@ -3,7 +3,14 @@ import img1 from "../IMG/Rectangle 81.png";
 import img2 from "../IMG/Rectangle 86.png";
 import img3 from "../IMG/Rectangle 95.png";
 import img4 from "../IMG/Group.png";
+import img5 from "../IMG/Vector (1).png";
 import { FiSearch } from "react-icons/fi";
+import { BsHouseDoor } from "react-icons/bs";
+import { MdEditCalendar } from "react-icons/md";
+import { LiaFileContractSolid } from "react-icons/lia";
+import { IoCubeOutline } from "react-icons/io5";
+import { BiNews } from "react-icons/bi";
+import { HiSpeakerphone } from "react-icons/hi";
 
 function Home() {
   return (
@@ -58,19 +65,63 @@ function Home() {
         <p>The property selection process involves several steps to ensure that you make an informed and <br /> wise decision when purchasing real estate.</p>
       </div>
       <div className="precious-four">
-        <div className="e-card playing">
-          <div className="image"></div>
-
-          <div className="wave"></div>
-          <div className="wave"></div>
-          <div className="wave"></div>
-          <div className="infotop">
-            <FiSearch/>
-            <br />  
-            Explore
-            <br />
-            <div className="name">Look at property values, trends, and potential for future appreciation.</div>
+        <div className="card">
+          <FiSearch className="four-icons"/>
+          <h3>Explore</h3>
+          <p>Search for a property of your choice</p>
+        </div>
+        <div className="card">
+          <BsHouseDoor className="four-icons"/>
+          <h3>Select A Property</h3>
+          <p>Decide on which of our properties you want</p>
+        </div>
+        <div className="card">
+          <MdEditCalendar className="four-icons"/>
+          <h3>Book A Site</h3>
+          <p>Set a day aside to inspect our properties</p>
+        </div>
+        <div className="card">
+          <LiaFileContractSolid className="four-icons"/>
+          <h3>Book Your Property</h3>
+          <p>Get your desired property from us</p>
+        </div>
+      </div>
+      <div className="precious-five">
+        <div className="top">
+          <h2>What We Do</h2>
+        </div>
+        <div className="bottom">
+          <div className="one">
+            <div className="circle">
+              <IoCubeOutline className="icons"/>
+            </div>
+            <h4>3D Planning</h4>
+            <p>We also specialize in 3d planning and modelling for your houses bringing your dreams to reality</p>
           </div>
+          <div className="one">
+            <div className="circle">
+              <BiNews className="icons"/>
+            </div>
+            <h4>Web Platform</h4>
+            <p>We also create responsive websites for companies and businesses</p>
+          </div>
+          <div className="one">
+            <div className="circle">
+              <HiSpeakerphone className="icons"/>
+            </div>
+            <h4>Marketing</h4>
+            <p>We also market out companies and businesses to the general public, creating more awareness</p>
+          </div>
+        </div>
+      </div>
+      <div className="precious-six">
+        <div className="left"></div>
+        <div className="right">
+          <img src={img5} alt="" />
+          <h1>Tezzer Homes</h1>
+          <input type="text" placeholder="Your Name" /><br />
+          <input type="text" placeholder="Your Email Address" /><br />
+          <button>Get In Touch With Us</button>
         </div>
       </div>
     </>
