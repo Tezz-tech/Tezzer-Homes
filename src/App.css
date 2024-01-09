@@ -1,16 +1,98 @@
-.precious-nav{
+.precious-nav {
   display: flex;
   width: 100%;
   justify-content: space-between;
   height: 800px;
 }
 
-.precious-nav .left{
+.precious-nav .left {
   width: 30%;
 }
 
-.precious-nav .right{
+.precious-nav .right {
   width: 60%;
   background-image: url(../src/IMG/Rectangle\ 115.png);
-  background-repeat:no-repeat ;
+  background-repeat: no-repeat;
+}
+
+.RealBrand-container {
+  display: flex;
+  width: 95%;
+  gap: 10px;
+  margin: 100px auto;
+  justify-content: space-evenly;
+}
+
+.top-location-experience {
+  display: flex;
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.topcardcomponent {
+  border-radius: 10px;
+  background-color: #ffffff;
+  padding: 0em 3.5em;
+  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  box-shadow: 6px 6px 12px #bababa,
+    -6px -6px 12px #ffffff;
+  margin-right: 4em;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.sidecardcomponent {
+  border-radius: 10px;
+  background-color: #ffffff;
+  padding: 0.5em 8em;
+  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  box-shadow: 6px 6px 12px #bababa,
+    -6px -6px 12px #ffffff;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.TopCardLocationInfo-location-div {
+  display: flex;
+}
+
+.TopCardLocationInfo-location {
+  display: flex;
+  margin-right: 0.5em;
+}
+
+.TopCardLocationInfo-location p,
+.TopCardLocationInfo-location i {
+  font-size: 1.2rem;
+}
+
+.brand-image-container {
+  padding: 1em 1em;
+  border-radius: 30px;
+  background: #e0e0e0;
+  box-shadow: 15px 15px 30px #bebebe,
+    -15px -15px 30px #ffffff;
+  text-align: left;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.brand-image-container p {
+  margin: 0;
+  padding-left: 1em 1.2em;
+}
+
+.brand-image-container img {
+  height: 120px;
+  margin: 0;
+}
+
+.location-trait {
+  color: green;
+  font-weight: 600;
+}
+
+.top-location-experience h1 {
+  color: rgb(0, 182, 0);
+  font-size: 4rem;
 }

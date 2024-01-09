@@ -5,6 +5,7 @@ function Home() {
             <img src="" alt="" />
             <h1>We Help You Building The Dreams & Bring More Than You Expect</h1>
             <button>Explore Properties</button>
+            
         </div>
         <div className="right">
         </div>
