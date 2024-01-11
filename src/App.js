@@ -9,21 +9,17 @@ import Footer from "./Common/Footer";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BrowserRouter>
+        <Navigation />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about-us" element={<About />} />
+          <Route path="/DevelopersPage" element={<DevesLand />} />
+          <Route path="/DevelopersDescription" element={<DevelopersDesc />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
     </div>
   );
 }
