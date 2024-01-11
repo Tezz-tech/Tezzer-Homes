@@ -1,38 +1,555 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 100px;
+  color: #000000;
+}
+
+.navbar-left {
+  flex: 1;
+  align-items: center;
+  display: flex;
+}
+
+.navbar-left h2 {
+  font-size: 40px;
+  padding-left: 20px;
+  margin-top: 30px;
+  color: #545454;
+}
+
+.navbar-right {
+  display: flex;
+  gap: 50px;
+}
+
+.logo {
+  height: 150px;
+}
+
+.nav-link {
+  color: #545454;
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 133.4%;
+  letter-spacing: 0.11px;
+  text-decoration: none;
+}
+
+.precious-one {
+  display: flex;
+  justify-content: space-between;
+  /* width: 100%; */
+  height: 800px;
+}
+
+.precious-one .right {
+  background-image: url(./IMG/img1.jpeg);
+  width: 60%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.precious-one .left {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.precious-one .left h1 {
+  color: #545454;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 133.4%;
+  padding: 0px 0px 0px 60px;
+  margin-bottom: 35px;
+}
+
+.precious-one .left button {
+  border-radius: 75px;
+  background: #e0e0e0;
+  box-shadow: 41px 41px 82px #868686,
+    -41px -41px 82px #ffffff;
+  background-color: white;
+  padding: 15px 35px;
+  border: none;
+}
+
+.fancy {
+  background-color: transparent;
+  border: 2px solid #000;
+  border-radius: 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin: 0;
+  outline: none;
+  overflow: visible;
+  padding: 1.25em 2em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  transition: all 0.3s ease-in-out;
+  user-select: none;
+  font-size: 13px;
+}
+
+.fancy::before {
+  content: " ";
+  width: 1.5625rem;
+  height: 2px;
+  background: black;
+  top: 50%;
+  left: 1.5em;
+  position: absolute;
+  transform: translateY(-50%);
+  transform-origin: center;
+  transition: background 0.3s linear, width 0.3s linear;
+}
+
+.fancy .text {
+  font-size: 1.5em;
+  line-height: 1.33333em;
+  padding-left: 2em;
+  display: block;
+  text-align: left;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: black;
+}
+
+.fancy .top-key {
+  height: 2px;
+  width: 1.5625rem;
+  top: -2px;
+  left: 0.625rem;
+  position: absolute;
+  background: #e8e8e8;
+  transition: width 0.5s ease-out, left 0.3s ease-out;
+}
+
+.fancy .bottom-key-1 {
+  height: 2px;
+  width: 1.5625rem;
+  right: 1.875rem;
+  bottom: -2px;
+  position: absolute;
+  background: #e8e8e8;
+  transition: width 0.5s ease-out, right 0.3s ease-out;
+}
+
+.fancy .bottom-key-2 {
+  height: 2px;
+  width: 0.625rem;
+  right: 0.625rem;
+  bottom: -2px;
+  position: absolute;
+  background: #e8e8e8;
+  transition: width 0.5s ease-out, right 0.3s ease-out;
+}
+
+.fancy:hover {
+  color: white;
+  background: black;
+}
+
+.fancy:hover::before {
+  width: 0.9375rem;
+  background: white;
+}
+
+.fancy:hover .text {
+  color: white;
+  padding-left: 1.5em;
+}
+
+.fancy:hover .top-key {
+  left: -2px;
+  width: 0px;
+}
+
+.fancy:hover .bottom-key-1,
+.fancy:hover .bottom-key-2 {
+  right: 0;
+  width: 0;
+}
+
+.precious-two {
+  display: flex;
+  margin: 50px 20px;
+  justify-content: space-evenly;
+}
+
+.precious-two .card {
+  width: 20%;
+  border-radius: 30px;
+  background: #ffffff;
+  box-shadow: 15px 15px 30px #bebebe,
+    -15px -15px 30px #ffffff;
+  padding: 50px 20px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.precious-two .card h3 {
+  font-size: 45px;
+  margin-bottom: 25px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.precious-two .card img {
+  height: 150px;
+  margin-bottom: 25px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.precious-two .card p {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.precious-two .card span {
+  color: #12B7B6;
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.precious-two .card button {
+  margin: 30px 0px;
+  padding: 1em 2em;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #2c9caf;
+  transition: all 1000ms;
+  font-size: 19px;
+  position: relative;
+  overflow: hidden;
+  background-color: #ffffff;
+  outline: 2px solid #2c9caf;
+}
+
+.precious-two .card button:hover {
+  color: #ffffff;
+  transform: scale(1.1);
+  outline: 2px solid #70bdca;
+  box-shadow: 4px 5px 17px -4px #268391;
+}
+
+.precious-two .card button::before {
+  content: "";
+  position: absolute;
+  left: -50px;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background-color: #2c9caf;
+  transform: skewX(45deg);
+  z-index: -1;
+  transition: width 1000ms;
+}
+
+.precious-two .card button:hover::before {
+  width: 250%;
+}
+
+.precious-three {
+  width: 90%;
+  margin: 100px auto;
+}
+
+.precious-three h2 {
+  font-size: 60px;
+  color: #545454;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+
+.precious-three p {
+  font-size: 25px;
+  color: #000000;
+}
+
+.precious-four {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin: 50px 20px;
+  justify-content: space-evenly;
+}
+
+.precious-four .card {
+  width: 20%;
+  border-radius: 30px;
+  background: #ffffff;
+  box-shadow: 15px 15px 30px #bebebe,
+    -15px -15px 30px #ffffff;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.precious-four .card h3 {
+  font-size: 45px;
+  margin-bottom: 25px;
+}
+
+.precious-four .card img {
+  height: 150px;
+}
+
+.precious-four .card p {
+  font-size: 30px;
+  margin-bottom: 25px;
+}
+
+.precious-four .four-icons {
+  font-size: 80px;
+  margin-bottom: 25px;
+}
+
+.precious-five {
+  padding: 50px 5%;
+  margin: auto;
+  margin-top: 100px;
+  background-color: #268391;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.precious-five .circle {
+  width: 326px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 326px;
+  border-radius: 166px;
+  background: #ffffff;
+  box-shadow: 20px 20px 50px 0px #CDCDCD inset, -20px -20px 50px 0px #FFF inset;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.precious-five .icons {
+  font-size: 150px;
+  color: #268391;
+}
+
+.precious-five h2 {
+  font-size: 60px;
+  padding: 20px;
+  font-weight: normal;
+  color: #ffffff;
+}
+
+.precious-five .one {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 28%;
+  text-align: center;
+}
+
+.precious-five .one h4 {
+  font-size: 35px;
+  margin-top: 20px;
+}
+
+.precious-five .one p {
+  font-size: 25px;
+  margin-top: 20px;
+}
+
+.precious-five .bottom {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.precious-six {
+  display: flex;
+  height: 1200px;
+}
+
+.precious-six .left {
+  width: 55%;
+  background-image: url(./IMG/pexels-photo-323780.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+.precious-six .right {
+  width: 45%;
+  background-color: #2D2D2D;
+  padding: 200px 50px 0px 70px;
+}
+
+.precious-six .right img {
+  height: 200px;
+}
+
+.precious-six .right h1 {
+  font-size: 65px;
+  color: white;
+}
+
+.precious-six .right input {
+  margin: 30px;
+  background: none;
+  border: none;
+  outline: none;
+  width: 50%;
+  padding: 10px 50px;
+  font-size: 16px;
+  border-radius: 9999px;
+  box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+  color: #fff;
+  height: 100px;
+}
+
+.precious-six .right input::placeholder {
+  color: white;
+  font-size: 28px;
+}
+
+.precious-six .right button {
+  padding: 17px 40px;
+  border-radius: 50px;
+  cursor: pointer;
+  border: 0;
+  background-color: #2c9caf;
+  box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-size: 25px;
+  transition: all 0.5s ease;
+  margin-left: 30px;
+  margin-top: 10px;
+}
+
+.precious-six .right button:hover {
+  letter-spacing: 3px;
+  background-color: #2D2D2D;
+  color: hsl(0, 0%, 100%);
+  box-shadow: #2c9caf 0px 7px 29px 0px;
+}
+
+.precious-six .right button:active {
+  letter-spacing: 3px;
+  background-color: #2c9caf;
+  color: hsl(0, 0%, 100%);
+  box-shadow: #2c9caf;
+  transform: translateY(10px);
+  transition: 100ms;
+}
+
+footer {
+  width: 100%;
+  background-color: #000;
+  color: white;
+  text-align: center;
+  padding: 30px 0px;
+  font-size: 20px;
+}
+
+.about-one {
+  width: 100%;
+  text-align: center;
+}
+
+.about-one img {
+  height: 800px;
+}
+
+.about-two {
+  padding: 100px 150px;
+  background-color: rgba(31, 31, 31, 0.85);
+  color: white;
+  margin-top: 100px;
+}
+
+.about-two h2 {
+  font-size: 65px;
+  font-weight: normal;
+  margin-bottom: 30px;
+}
+
+.about-two p {
+  font-size: 27px;
+  margin-bottom: 60px;
+}
+
+.about-two .main {
+  text-align: center;
+  width: 15%;
+}
+
+.about-two .main img {
+  margin-bottom: 25px;
+  height: 100px;
+}
+
+.about-two .main h3 {
+  font-size: 30px;
+}
+
+.about-two .icons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.about-three .card .circle {
+  border-radius: 50%;
+  height: 250px;
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #EDEDED;
+  box-shadow: 20px 20px 50px 0px #CDCDCD inset, -20px -20px 50px 0px #FFF inset;
+}
+
+.about-three {
+  display: flex;
+  width: 90%;
+  margin: 100px auto 70px auto;
+  justify-content: space-between;
+}
+
+.about-three .card{
+  width: 25%;
+  border-radius: 30px;
+  background: #ffffff;
+  box-shadow: 15px 15px 30px #bebebe,
+    -15px -15px 30px #ffffff;
+  padding: 50px 25px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.about-three h3{
+  font-size: 55px;
+  margin: 15px 0px;
+  font-weight: normal;
+}
+
+.about-three p{
+  font-size: 25px;
 }
