@@ -23,13 +23,13 @@
 .navbar-left h2 {
   font-size: 40px;
   padding-left: 20px;
-  margin-top: 40px;
+  margin-top: 30px;
   color: #545454;
 }
 
 .navbar-right {
   display: flex;
-  gap: 80px;
+  gap: 50px;
 }
 
 .logo {
@@ -38,7 +38,7 @@
 
 .nav-link {
   color: #545454;
-  font-size: 40px;
+  font-size: 35px;
   font-style: normal;
   font-weight: 700;
   line-height: 133.4%;
@@ -344,47 +344,47 @@
   box-shadow: 20px 20px 50px 0px #CDCDCD inset, -20px -20px 50px 0px #FFF inset;
 }
 
-.precious-five .icons{
+.precious-five .icons {
   font-size: 150px;
   color: #268391;
 }
 
-.precious-five h2{
+.precious-five h2 {
   font-size: 60px;
   padding: 20px;
   font-weight: normal;
   color: #ffffff;
 }
 
-.precious-five .one{
+.precious-five .one {
   display: flex;
- align-items: center;
+  align-items: center;
   flex-direction: column;
   width: 28%;
   text-align: center;
 }
 
-.precious-five .one h4{
+.precious-five .one h4 {
   font-size: 35px;
   margin-top: 20px;
 }
 
-.precious-five .one p{
+.precious-five .one p {
   font-size: 25px;
   margin-top: 20px;
 }
 
-.precious-five .bottom{
+.precious-five .bottom {
   display: flex;
   justify-content: space-evenly;
 }
 
-.precious-six{
+.precious-six {
   display: flex;
   height: 1200px;
 }
 
-.precious-six .left{
+.precious-six .left {
   width: 55%;
   background-image: url(./IMG/pexels-photo-323780.webp);
   background-repeat: no-repeat;
@@ -392,22 +392,22 @@
 
 }
 
-.precious-six .right{
+.precious-six .right {
   width: 45%;
   background-color: #2D2D2D;
   padding: 200px 50px 0px 70px;
 }
 
-.precious-six .right img{
+.precious-six .right img {
   height: 200px;
 }
 
-.precious-six .right h1{
+.precious-six .right h1 {
   font-size: 65px;
   color: white;
 }
 
-.precious-six .right input{
+.precious-six .right input {
   margin: 30px;
   background: none;
   border: none;
@@ -421,9 +421,9 @@
   height: 100px;
 }
 
-.precious-six .right input::placeholder{
+.precious-six .right input::placeholder {
   color: white;
-  font-size: 18px;
+  font-size: 28px;
 }
 
 .precious-six .right button {
@@ -457,11 +457,99 @@
   transition: 100ms;
 }
 
-footer{
+footer {
   width: 100%;
   background-color: #000;
   color: white;
   text-align: center;
   padding: 30px 0px;
   font-size: 20px;
+}
+
+.about-one {
+  width: 100%;
+  text-align: center;
+}
+
+.about-one img {
+  height: 800px;
+}
+
+.about-two {
+  padding: 100px 150px;
+  background-color: rgba(31, 31, 31, 0.85);
+  color: white;
+  margin-top: 100px;
+}
+
+.about-two h2 {
+  font-size: 65px;
+  font-weight: normal;
+  margin-bottom: 30px;
+}
+
+.about-two p {
+  font-size: 27px;
+  margin-bottom: 60px;
+}
+
+.about-two .main {
+  text-align: center;
+  width: 15%;
+}
+
+.about-two .main img {
+  margin-bottom: 25px;
+  height: 100px;
+}
+
+.about-two .main h3 {
+  font-size: 30px;
+}
+
+.about-two .icons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.about-three .card .circle {
+  border-radius: 50%;
+  height: 250px;
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #EDEDED;
+  box-shadow: 20px 20px 50px 0px #CDCDCD inset, -20px -20px 50px 0px #FFF inset;
+}
+
+.about-three {
+  display: flex;
+  width: 90%;
+  margin: 100px auto 70px auto;
+  justify-content: space-between;
+}
+
+.about-three .card{
+  width: 25%;
+  border-radius: 30px;
+  background: #ffffff;
+  box-shadow: 15px 15px 30px #bebebe,
+    -15px -15px 30px #ffffff;
+  padding: 50px 25px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.about-three h3{
+  font-size: 55px;
+  margin: 15px 0px;
+  font-weight: normal;
+}
+
+.about-three p{
+  font-size: 25px;
 }
