@@ -759,3 +759,8 @@ footer {
   border: none;
   cursor: pointer;
 }
+
+.register{
+  border: none;
+  background-color: transparent;
+}
