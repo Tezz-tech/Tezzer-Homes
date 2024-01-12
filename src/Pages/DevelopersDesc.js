@@ -1,8 +1,8 @@
-function DevelopersDesc (){
-return(
-    <div>
+// function DevelopersDesc (){
+// return(
+//     <div>
         
-    </div>
-)
-}
-export default DevelopersDesc;
+//     </div>
+// )
+// }
+// export default DevelopersDesc;

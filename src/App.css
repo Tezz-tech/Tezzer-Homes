@@ -1,16 +1,399 @@
-.precious-nav{
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.precious-nav {
   display: flex;
   width: 100%;
   justify-content: space-between;
   height: 800px;
 }
 
-.precious-nav .left{
+.precious-nav .left {
   width: 30%;
 }
 
-.precious-nav .right{
+.precious-nav .right {
   width: 60%;
   background-image: url(../src/IMG/Rectangle\ 115.png);
-  background-repeat:no-repeat ;
+  background-repeat: no-repeat;
+}
+
+.Sunny_bg {
+  background-image: url(././IMG/Rectangle162.png);
+  background-repeat: no-repeat;
+  height: 500px;
+  top: 280px;
+  background-size: 100%;
+}
+
+.Sunny_bg_textContainer {
+  margin-left: 750px;
+  padding-top: 100px;
+}
+
+.Sunny_textAbove img {
+  width: 500px;
+}
+
+.Sunny_textBelow img {
+  width: 500px;
+  padding-top: 40px;
+}
+
+.Sunny_belowBg {
+  margin-top: -80px;
+}
+
+.Sunny_belowBg img {
+  width: 1000px;
+  margin-left: 100px;
+}
+
+.Sunny_sortbyContainer {
+  margin-left: 1100px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.Sunny_sortText {
+  font-family: Montserrat;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 29px;
+  letter-spacing: 0.005em;
+  text-align: left;
+}
+
+.Sunny_lodhaContainer {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 60px;
+}
+
+.Sunny_lodha {
+  width: 500px;
+  height: 300px;
+  flex-shrink: 0;
+  border-radius: 43px;
+  background: #F3F3F3;
+  box-shadow: 20px 20px 50px 0px #D2D2D2, -20px -20px 50px 0px #FFF;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+
+.Sunny_lodhaImg img {
+  width: 200px;
+  height: 100px;
+  margin-top: 15px;
+}
+
+.Sunny_lodhaRight h5 {
+  color: #1F1F1F;
+  font-family: Montserrat;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 133.4%;
+  letter-spacing: 0.13px;
+  margin-top: 15px;
+}
+
+.Sunny_lodhaRight p {
+  color: #12B7B6;
+  font-family: Montserrat;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 133.4%;
+  letter-spacing: 0.13px;
+  margin-top: 15px;
+}
+
+.Sunny_lodhaImg,
+.Sunny_projects {
+  padding-top: 90px;
+}
+
+.Sunny_projects {
+  margin-top: -60px;
+}
+
+.Sunny_projects h4 {
+  color: #1F1F1F;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 133.4%;
+  letter-spacing: 0.11px;
+}
+
+span {
+  color: #12B7B6;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 133.4%;
+  letter-spacing: 0.11px;
+  margin-left: 10px;
+}
+
+.Sunny_span2 {
+  margin-left: 32px;
+}
+
+.Sunny_span3 {
+  margin-left: 18px;
+}
+
+.Sunny_checkBtn {
+  width: 198px;
+  height: 55px;
+  flex-shrink: 0;
+  border-radius: 42.5px;
+  background: #F9F9F9;
+  box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.08), -10px -10px 20px 0px #FFF;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 20px;
+}
+
+.Sunny_checkBtn h3 {
+  color: #12B7B6;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 133.4%;
+  letter-spacing: 0.11px;
+  padding-top: 10px;
+}
+
+.Sunny_checkBtn_img img {
+  width: 50px;
+}
+
+.Sunny_prestigeImg img {
+  width: 200px;
+  height: 160px;
+  margin-top: -20px;
+}
+
+.Sunny_brigadeImg img {
+  width: 250px;
+  height: 150px;
+}
+
+.Sunny_brigadeImg {
+  margin-top: -20px;
+}
+
+.Sunny_sobhaImg img {
+  width: 100px;
+}
+
+/* Locality Landing Page css starts here */
+
+.Sunny_localBg_Img {
+  background-image: url(./IMG/Localpage_bgImg.png);
+  height: 500px;
+  width: 100%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.Sunny_localUp_Text {
+  width: 655px;
+  height: 137px;
+  flex-shrink: 0;
+  color: #434343;
+  text-align: center;
+  font-family: Lora;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 141.9%;
+  padding-top: 20px;
+}
+
+.Sunny_localDown_Text {
+  width: 669px;
+  height: 66px;
+  flex-shrink: 0;
+  color: #1B1B1B;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150.4%;
+  letter-spacing: 0.72px;
+  padding-top: 10px;
+}
+
+.Sunny_localContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: -70px;
+}
+
+.Sunny_searchBar input {
+  border: none;
+  width: 700px;
+  height: 50px;
+  flex-shrink: 0;
+  border-radius: 42.5px;
+  background: #F9F9F9;
+  font-size: larger;
+  box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.08) inset, -10px -10px 20px 0px #FFF inset;
+}
+
+.Sunny_padRight {
+  padding-right: 25px;
+}
+
+.Sunny_searchBtn_Container button {
+  border: none;
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+  box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.08) inset, -10px -10px 20px 0px #FFF inset;
+  border-radius: 40px;
+  margin-top: -8px;
+}
+
+.Sunny_localLast {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 100px;
+}
+
+.Sunny_last1 img {
+  width: 500px;
+  height: 300px;
+}
+
+.Sunny_last1 h5 {
+  color: #FFF;
+  font-family: Montserrat;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 133.4%;
+  letter-spacing: 0.24px;
+  padding-left: 20px;
+  margin-top: -150px;
+}
+
+.Sunny_last1 p {
+  color: #FFF;
+  font-family: Montserrat;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150.4%;
+  letter-spacing: 0.72px;
+  padding-left: 20px;
+}
+
+.Sunny_last2 img {
+  width: 500px;
+  height: 300px;
+}
+
+.Sunny_last2 h5 {
+  color: #FFF;
+  font-family: Montserrat;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 133.4%;
+  letter-spacing: 0.24px;
+  padding-left: 20px;
+  margin-top: -150px;
+}
+
+.Sunny_last2 p {
+  color: #FFF;
+  font-family: Montserrat;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150.4%;
+  letter-spacing: 0.72px;
+  padding-left: 20px;
+}
+
+/* Agent Archive css starts here */
+
+.Sunny_upwardMove {
+  margin-top: -80px;
+}
+
+.Sunny_agentContainer {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 60px;
+}
+
+.Sunny_agent1 {
+  width: 500px;
+  height: 300px;
+  flex-shrink: 0;
+  border-radius: 43px;
+  background: #F3F3F3;
+  box-shadow: 20px 20px 50px 0px #D2D2D2, -20px -20px 50px 0px #FFF;
+  display: flex;
+}
+
+.Sunny_agent1_Right_Text1Container {
+  display: flex;
+}
+
+.Sunny_agent1_Right_Text1Container h4 {
+  color: #1F1F1F;
+  font-family: Montserrat;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 133.4%;
+  letter-spacing: 0.13px;
+}
+
+.Sunny_Nerul p {
+  color: #1F1F1F;
+  font-family: Montserrat;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 133.4%;
+  letter-spacing: 1.43px;
+}
+
+.Sunny_Channel p {
+  color: #29BDBC;
+  font-family: Montserrat;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 133.4%; 
+  letter-spacing: 0.11px;
+}
+
+.Sunny_checkBox input {
+  margin-left: 15px;
+  width: 25px;
+  height: 25px;
+  border-radius: 25px;
+}
+
+.Sunny_agent1_Left img {
+  width: 250px;
+  height: 299px;
 }
