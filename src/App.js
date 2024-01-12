@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './Pages/Home';
 import DevesLand from './Pages/DevesLand';
 import DevelopersDesc from './Pages/DevelopersDesc'
+import { LocalityDesc } from './Pages/LocalityDesc';
 
 function App() {
   return (
@@ -12,8 +13,8 @@ function App() {
                 <Route path='/' element={<Home/>}/>
                 <Route path='/DevelopersPage' element={<DevesLand/>}/>
                 <Route path='/DevelopersDescription' element={<DevelopersDesc/>}/>
-                
-            </Routes>
+                <Route path='/LocalityDescription' element={<LocalityDesc/>}/>
+            </Routes >
         </BrowserRouter>
     </div>
   );

@@ -5,7 +5,7 @@ const TopCardComponentInfo = () => {
     return (
         <div className="TopCardComponentInfo-container">
             <div className="TopCardComponentInfo-text">
-                <p><span className="location-trait">Market Presence </span>In Mumbai, India</p>
+                <p className="initiallocationtext"><span className="location-trait">Market Presence </span>In Mumbai, India</p>
                 <div className='TopCardLocationInfo-location-div'>
                     <div className="TopCardLocationInfo-location">
                         <i><MdOutlineLocationOn /></i>
@@ -17,7 +17,7 @@ const TopCardComponentInfo = () => {
                     </div>
                     <div className="TopCardLocationInfo-location">
                         <i><MdOutlineLocationOn /></i>
-                        <p>SeaWoods</p>
+                        <p>Seawoods</p>
                     </div>
                 </div>
             </div>
