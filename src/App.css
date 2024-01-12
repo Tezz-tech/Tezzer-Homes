@@ -27,6 +27,7 @@
   height: 500px;
   top: 280px;
   background-size: 100%;
+  width: 100%;
 }
 
 .Sunny_bg_textContainer {
@@ -352,6 +353,11 @@ span {
   display: flex;
 }
 
+.Sunny_agent1_Right{
+  padding-top: 50px;
+  padding-left: 20px;
+}
+
 .Sunny_agent1_Right_Text1Container {
   display: flex;
 }
@@ -369,7 +375,7 @@ span {
 .Sunny_Nerul p {
   color: #1F1F1F;
   font-family: Montserrat;
-  font-size: 26px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: 133.4%;
@@ -384,6 +390,11 @@ span {
   font-weight: 600;
   line-height: 133.4%; 
   letter-spacing: 0.11px;
+  padding-top: 15px;
+}
+
+.Sunny_agentCheck_Btn{
+  margin-top: 80px;
 }
 
 .Sunny_checkBox input {
@@ -396,4 +407,8 @@ span {
 .Sunny_agent1_Left img {
   width: 250px;
   height: 299px;
+}
+
+.Sunny_shift img{
+   height: 332px;
 }

@@ -7,6 +7,7 @@ import Agent3 from "../IMG/Agent3.png";
 import Agent4 from "../IMG/Agent4.png";
 import Agent5 from "../IMG/Agent5.png";
 import Agent6 from "../IMG/Agent6.png";
+import img6 from "../IMG/checkIcon.png";
 
 
 function ArgentArchive() {
@@ -27,7 +28,7 @@ function ArgentArchive() {
             <div className="Sunny_agentContainer">
                 <div className="Sunny_agent1">
                     <div className="Sunny_agent1_Left">
-                        <img src={ Agent1} alt="" />
+                        <img src={Agent1} alt="" />
                     </div>
 
                     <div className="Sunny_agent1_Right">
@@ -38,20 +39,117 @@ function ArgentArchive() {
 
                         <div className="Sunny_Nerul"><p>Nerul, Navi Mumbai</p></div>
                         <div className="Sunny_Channel"><p>Channel Partner</p></div>
-
-                        <div className="Sunny_agentBtn">
-                            <button></button>
+                        <div className="Sunny_checkBtn Sunny_agentCheck_Btn">
+                            <div><h3>Check profile</h3></div>
+                            <div className="Sunny_checkBtn_img"><img src={img6} alt="" /></div>
                         </div>
                     </div>
                 </div>
 
+
                 <div className="Sunny_agent1">
                     <div className="Sunny_agent1_Left">
-                        <img src={ Agent2} alt="" />
+                        <img src={Agent2} alt="" />
                     </div>
 
                     <div className="Sunny_agent1_Right">
+                        <div className="Sunny_agent1_Right_Text1Container">
+                            <div><h4>Rahul Gami</h4></div>
+                            <div className="Sunny_checkBox"><input type="checkbox" id="" /></div>
+                        </div>
 
+                        <div className="Sunny_Nerul"><p>Nerul, Navi Mumbai</p></div>
+                        <div className="Sunny_Channel"><p>Agent</p></div>
+                        <div className="Sunny_checkBtn Sunny_agentCheck_Btn">
+                            <div><h3>Check profile</h3></div>
+                            <div className="Sunny_checkBtn_img"><img src={img6} alt="" /></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className="Sunny_agentContainer">
+                <div className="Sunny_agent1">
+                    <div className="Sunny_agent1_Left Sunny_shift">
+                        <img src={Agent3} alt="" />
+                    </div>
+
+                    <div className="Sunny_agent1_Right">
+                        <div className="Sunny_agent1_Right_Text1Container">
+                            <div><h4>Rahul Gami</h4></div>
+                            <div className="Sunny_checkBox"><input type="checkbox" id="" /></div>
+                        </div>
+
+                        <div className="Sunny_Nerul"><p>Nerul, Navi Mumbai</p></div>
+                        <div className="Sunny_Channel"><p>Channel Partner</p></div>
+                        <div className="Sunny_checkBtn Sunny_agentCheck_Btn">
+                            <div><h3>Check profile</h3></div>
+                            <div className="Sunny_checkBtn_img"><img src={img6} alt="" /></div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div className="Sunny_agent1">
+                    <div className="Sunny_agent1_Left">
+                        <img src={Agent4} alt="" />
+                    </div>
+
+                    <div className="Sunny_agent1_Right">
+                        <div className="Sunny_agent1_Right_Text1Container">
+                            <div><h4>Rahul Gami</h4></div>
+                            <div className="Sunny_checkBox"><input type="checkbox" id="" /></div>
+                        </div>
+
+                        <div className="Sunny_Nerul"><p>Nerul, Navi Mumbai</p></div>
+                        <div className="Sunny_Channel"><p>Agent</p></div>
+                        <div className="Sunny_checkBtn Sunny_agentCheck_Btn">
+                            <div><h3>Check profile</h3></div>
+                            <div className="Sunny_checkBtn_img"><img src={img6} alt="" /></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className="Sunny_agentContainer">
+                <div className="Sunny_agent1">
+                    <div className="Sunny_agent1_Left">
+                        <img src={Agent5} alt="" />
+                    </div>
+
+                    <div className="Sunny_agent1_Right">
+                        <div className="Sunny_agent1_Right_Text1Container">
+                            <div><h4>Rahul Gami</h4></div>
+                            <div className="Sunny_checkBox"><input type="checkbox" id="" /></div>
+                        </div>
+
+                        <div className="Sunny_Nerul"><p>Nerul, Navi Mumbai</p></div>
+                        <div className="Sunny_Channel"><p>Channel Partner</p></div>
+                        <div className="Sunny_checkBtn Sunny_agentCheck_Btn">
+                            <div><h3>Check profile</h3></div>
+                            <div className="Sunny_checkBtn_img"><img src={img6} alt="" /></div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div className="Sunny_agent1">
+                    <div className="Sunny_agent1_Left">
+                        <img src={Agent6} alt="" />
+                    </div>
+
+                    <div className="Sunny_agent1_Right">
+                        <div className="Sunny_agent1_Right_Text1Container">
+                            <div><h4>Rahul Gami</h4></div>
+                            <div className="Sunny_checkBox"><input type="checkbox" id="" /></div>
+                        </div>
+
+                        <div className="Sunny_Nerul"><p>Nerul, Navi Mumbai</p></div>
+                        <div className="Sunny_Channel"><p>Agent</p></div>
+                        <div className="Sunny_checkBtn Sunny_agentCheck_Btn">
+                            <div><h3>Check profile</h3></div>
+                            <div className="Sunny_checkBtn_img"><img src={img6} alt="" /></div>
+                        </div>
                     </div>
                 </div>
             </div>
