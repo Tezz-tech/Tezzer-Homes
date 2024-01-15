@@ -32,7 +32,7 @@
 .top-location-experience {
   display: flex;
   gap: 3em;
-
+}
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 * {
@@ -573,6 +573,7 @@ footer {
 
 .AgentImgtxt {
   padding: 1em;
+}
 .about-one img {
   height: 800px;
 }
@@ -879,7 +880,7 @@ footer {
   box-shadow: 0px 0px 0px 7px rgba(79, 78, 105, 0.295);
 }
 
-button {
+.creator-button {
   --color: #12B7B6;
   font-family: inherit;
   display: inline-block;
@@ -898,7 +899,7 @@ button {
   color: var(--color);
 }
 
-button:before {
+.creator-button:before {
   content: "";
   position: absolute;
   z-index: -1;
@@ -908,22 +909,22 @@ button:before {
   border-radius: 50%;
 }
 
-button:hover {
+.creator-button:hover {
   color: #fff;
 }
 
-button:before {
+.creator-button:before {
   top: 100%;
   left: 100%;
   transition: all .7s;
 }
 
-button:hover:before {
+.creator-button:hover:before {
   top: -30px;
   left: -30px;
 }
 
-button:active:before {
+.creator-button:active:before {
   background: #3a0ca3;
   transition: background 0s;
 }
@@ -1278,4 +1279,88 @@ button:active:before {
 .register{
   border: none;
   background-color: transparent;
+}
+
+/* Layout */
+
+.admin-dashboard {
+  display: grid;
+  grid-template-areas: 
+    "header header"
+    "nav main"
+    "nav properties"
+    "nav users";
+}
+
+header {
+  grid-area: header;
+}
+
+nav {
+  grid-area: nav;
+}
+
+main {
+  grid-area: main;
+}
+
+.properties {
+  grid-area: properties;
+}
+
+.users {
+  grid-area: users;  
+}
+
+/* Header */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.logo img {
+  height: 2rem;
+}
+
+/* Navigation */
+
+.Creatornav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.Creatornav li {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+
+.Creatornav li:hover {
+  background: #eee;
+}
+
+.Creatornav a {
+  text-decoration: none;
+  color: #333;
+  margin-left: 0.5rem;
+}
+
+/* Main Sections */
+
+.creatormain, 
+.creatorproperties,
+.creatorusers {
+  padding: 1rem;
+}
+
+/* Placeholder Styles */
+
+.creatorproperties, 
+.creatorusers {
+  background: #eee;
+  text-align: center;
 }
