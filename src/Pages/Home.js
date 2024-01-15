@@ -1,17 +1,3 @@
-import { Link } from "react-router-dom";
-import img1 from "../IMG/Rectangle 81.png";
-import img2 from "../IMG/Rectangle 86.png";
-import img3 from "../IMG/Rectangle 95.png";
-import img4 from "../IMG/Group.png";
-import img5 from "../IMG/Vector (1).png";
-import { FiSearch } from "react-icons/fi";
-import { BsHouseDoor } from "react-icons/bs";
-import { MdEditCalendar } from "react-icons/md";
-import { LiaFileContractSolid } from "react-icons/lia";
-import { IoCubeOutline } from "react-icons/io5";
-import { BiNews } from "react-icons/bi";
-import { HiSpeakerphone } from "react-icons/hi";
-
 function Home() {
   return (
     <>
