@@ -8,20 +8,22 @@ import DevesLand from "./Pages/DevesLand";
 import DevelopersDesc from "./Pages/DevelopersDesc";
 import Navigation from "./Common/Navigation";
 import Footer from "./Common/Footer";
+import AdminDashboard from './Pages/Admin';
 
 function App() {
   return (
     <div>
-        <BrowserRouter>
-            <Navigation />
-            <Routes>
-                <Route path='/' element={<Home/>}/>
-                <Route path='/DevelopersPage' element={<DevesLand/>}/>
-                <Route path='/DevelopersDescription' element={<DevelopersDesc/>}/>
-                <Route path='/LocalityDescription' element={<LocalityDesc/>}/>
-                <Route path= '/AgentDescription' element= {<AgentDesc />} />
+      <BrowserRouter>
+        <Navigation />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/DevelopersPage' element={<DevesLand />} />
+          <Route path='/DevelopersDescription' element={<DevelopersDesc />} />
+          <Route path='/LocalityDescription' element={<LocalityDesc />} />
+          <Route path='/AgentDescription' element={<AgentDesc />} />
           <Route path="/about-us" element={<About />} />
           <Route path="/DevelopersDescription" element={<DevelopersDesc />} />
+          <Route path="/AdminDashboard" element= {<AdminDashboard />}></Route>
         </Routes>
         <Footer />
       </BrowserRouter>

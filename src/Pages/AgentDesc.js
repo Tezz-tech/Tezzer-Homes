@@ -32,7 +32,7 @@ function AgentDesc() {
                         <i><FaPhone /> +9177865438984</i>
                         <i><IoGlobeOutline /> www.website.com</i>
                     </div>
-                    <button>Contact Agent</button>
+                    <button className="creator-button">Contact Agent</button>
                 </div>
             </div>
         </div>
