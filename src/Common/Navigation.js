@@ -24,7 +24,7 @@ function Navigation () {
           <Link className='nav-link' to="/">Home</Link>
           <Link className='nav-link' to="/about-us">About Us</Link>
           <Link className='nav-link' to="/projects">Projects</Link>
-          <Link className='nav-link' to="/developers">Developers</Link>
+          <Link className='nav-link' to="/DevelopersPage">Developers</Link>
           <Link className='nav-link' to="/localities">Localities</Link>
           <Link className='nav-link' to="/wishlist">Wishlist</Link>
           <div className="user-icon">
