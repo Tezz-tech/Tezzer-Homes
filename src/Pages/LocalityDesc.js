@@ -4,6 +4,7 @@ import ted from "../IMG/ted.jpeg";
 import penny from "../IMG/penny.jpeg";
 import hero from "../IMG/hero.jpeg";
 import fourstar from "../IMG/4stars-removebg-preview.png";
+
 // import map from '../IMG/map.png'
 // import Carousel from "./Carousel";
 const LocalityDesc = () => {
@@ -102,6 +103,49 @@ const LocalityDesc = () => {
                 className="reviewbox-top-left-img"
               />
             </div>
+            <div className="localityMap-container">
+              <h1>Locality Map</h1>
+              <div className="localitymapimg">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31520.516382079917!2d7.469071397251721!3d9.057877124280846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0ba5808f8b2d%3A0xa7190191916f082b!2sCentral%20Business%20District%2C%20Abuja%2C%20Federal%20Capital%20Territory!5e0!3m2!1sen!2sng!4v1705051890952!5m2!1sen!2sng" title="Google-maps view" style={{ width: 600, border: 0, height: 450 }} height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+            </div>
+            <div className="reviews-container">
+              <h1>Our Customers Feedback</h1>
+              {/* <p>Dont take our word for it. Trust our customers</p> */}
+              <div className="reviewbox-container">
+                <div className="reviewbox">
+                  <div className="reviewbox-top">
+                    <div className="reviewbox-top-left">
+                      <img src={penny} alt="img" className="reviewbox-top-left-img" />
+                      <p>Floyd Miles</p>
+                    </div>
+                    <img src={fourstar} alt="img" className="reviewbox-top-left-img" />
+                  </div>
+                  <p>This is a wonderful,easy to use and very effective, big ups to the team</p>
+                </div>
+                <div className="reviewbox">
+                  <div className="reviewbox-top">
+                    <div className="reviewbox-top-left">
+                      <img src={ted} alt="img" className="reviewbox-top-left-img" />
+                      <p>Floyd Miles</p>
+                    </div>
+                    <img src={fourstar} alt="img" className="reviewbox-top-left-img" />
+                  </div>
+                  <p>This is a wonderful,easy to use and very effective, big ups to the team</p>
+                </div>
+                <div className="reviewbox">
+                  <div className="reviewbox-top">
+                    <div className="reviewbox-top-left">
+                      <img src={hero} alt="img" className="reviewbox-top-left-img" />
+                      <p>Andrew Hero</p>
+                    </div>
+                    <img src={fourstar} alt="img" className="reviewbox-top-left-img" />
+                  </div>
+                  <p>This is a wonderful,easy to use and very effective, big ups to the team</p>
+                </div>
+
+              </div>
+            </div>
             <p>
               This is a wonderful,easy to use and very effective, big ups to the
               team
@@ -110,6 +154,10 @@ const LocalityDesc = () => {
         </div>
       </div>
     </>
+  )
+}
+export default LocalityDesc;
+
   );
 };
 export default LocalityDesc;
