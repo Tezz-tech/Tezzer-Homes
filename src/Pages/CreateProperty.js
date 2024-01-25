@@ -41,7 +41,7 @@ const CreateProperty = () => {
                 <div className="CreateProperty-container">
                     <form onSubmit={handleSubmit}>
                         {Fielderr && <div style={{ color: "red" }}>{Fielderr}</div>}
-
+                
                         <div>
                             <label>propertyName</label>
                             <input
