@@ -4,6 +4,9 @@ import ted from "../IMG/ted.jpeg";
 import penny from "../IMG/penny.jpeg";
 import hero from "../IMG/hero.jpeg";
 import fourstar from "../IMG/4stars-removebg-preview.png";
+
+// import map from '../IMG/map.png'
+// import Carousel from "./Carousel";
 const LocalityDesc = () => {
   return (
     <>
@@ -143,6 +146,10 @@ const LocalityDesc = () => {
 
               </div>
             </div>
+            <p>
+              This is a wonderful,easy to use and very effective, big ups to the
+              team
+            </p>
           </div>
         </div>
       </div>
@@ -151,3 +158,6 @@ const LocalityDesc = () => {
 }
 export default LocalityDesc;
 
+  );
+};
+export default LocalityDesc;
