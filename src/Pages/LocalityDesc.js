@@ -4,6 +4,7 @@ import ted from "../IMG/ted.jpeg";
 import penny from "../IMG/penny.jpeg";
 import hero from "../IMG/hero.jpeg";
 import fourstar from "../IMG/4stars-removebg-preview.png";
+
 // import map from '../IMG/map.png'
 // import Carousel from "./Carousel";
 const LocalityDesc = () => {
@@ -52,7 +53,9 @@ const LocalityDesc = () => {
           ></iframe>
         </div>
       </div>
-    </>
+
+      </>
+
   );
 };
 export default LocalityDesc;
