@@ -9,6 +9,8 @@ import DevesLand from "./Pages/DevesLand";
 import DevelopersDesc from "./Pages/DevelopersDesc";
 import Navigation from "./Common/Navigation";
 import Footer from "./Common/Footer";
+import Locality from './Pages/Locality';
+import Whishlist from './Pages/Wishlist';
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
                 <Route path='/LocalityDescription' element={<LocalityDesc/>}/>
                 <Route path= '/AgentDescription' element= {<AgentDesc />} />
                 <Route path= '/Projects' element= {<Projects />} />
+                <Route path= '/Localities' element= {<Locality />} />
+                <Route path= '/Wishlist' element= {<Whishlist />} />
           <Route path="/about-us" element={<About />} />
           <Route path="/DevelopersDescription" element={<DevelopersDesc />} />
         </Routes>

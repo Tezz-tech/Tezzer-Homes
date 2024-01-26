@@ -1,10 +1,12 @@
+import { Link } from "react-router-dom";
 import img1 from "../IMG/Rectangle 86.png";
 function DevesLand() {
   return (
     <>
       <div className="deves-one">
         <h2>
-        Check Nigeria’s biggest developers <br /> on board exclusive on Tezzer-Homes
+          Check Nigeria’s biggest developers <br /> on board exclusive on
+          Tezzer-Homes
         </h2>
       </div>
 
@@ -16,15 +18,19 @@ function DevesLand() {
           <div className="right">
             <h1>Lodha Group</h1>
             <h4>35+ years of experience</h4>
-            <h5>Completed Properties : <span>20</span></h5>
-            <button className="c-button c-button--gooey">
-              View Profile
-              <div className="c-button__blobs">
-                <div></div>
-                <div></div>
-                <div></div>
-              </div>
-            </button>
+            <h5>
+              Completed Properties : <span>20</span>
+            </h5>
+            <Link to="/DevelopersDescription">
+              <button className="c-button c-button--gooey">
+                View Profile
+                <div className="c-button__blobs">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
+              </button>
+            </Link>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               version="1.1"
