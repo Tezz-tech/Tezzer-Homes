@@ -1,24 +1,29 @@
-import img1 from "../IMG/Rectangle 86.png";
-function DevesLand() {
+import React from 'react';
+import img1 from '../IMG/pexels-pixabay-259685.jpg';
+
+function Projects() {
   return (
     <>
-      <div className="deves-one">
+      <div className="project-one">
         <h2>
-        Check Nigeria’s biggest developers <br /> on board exclusive on Tezzer-Homes
+          Check your favorite properties selected <br /> only for you by
+          Tezzer-Homes
         </h2>
       </div>
 
       <div className="project-two">
         <div className="card">
-          <div className="left1">
+          <div className="left">
             <img src={img1} alt="" />
           </div>
           <div className="right">
-            <h1>Lodha Group</h1>
-            <h4>35+ years of experience</h4>
-            <h5>Completed Properties : <span>20</span></h5>
+            <h3>Lohdah Group</h3>
+            <h1>Lodha Miracles</h1>
+            <h4>Andheri East, Mumbai</h4>
+            <h5>450K - 680K</h5>
+            <p>Ready to move in</p>
             <button className="c-button c-button--gooey">
-              View Profile
+                View Property
               <div className="c-button__blobs">
                 <div></div>
                 <div></div>
@@ -28,7 +33,7 @@ function DevesLand() {
             <svg
               xmlns="http://www.w3.org/2000/svg"
               version="1.1"
-              style={{ display: "block", height: 0, width: 0 }}
+              style={{ display: 'block', height: 0, width: 0 }}
             >
               <defs>
                 <filter id="goo">
@@ -53,4 +58,5 @@ function DevesLand() {
     </>
   );
 }
-export default DevesLand;
+
+export default Projects;

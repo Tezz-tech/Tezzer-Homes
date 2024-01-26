@@ -16,6 +16,12 @@ import AdminLogin from './Pages/AdminLogin';
 import Agents from './Pages/AgentDashboard';
 import AdminLanding from './Pages/adminlandpage';
 import AdminUsers from './Pages/AdminUsers';
+
+import Projects from "./Pages/Projects";
+import DevesLand from "./Pages/DevesLand";
+import DevelopersDesc from "./Pages/DevelopersDesc";
+import Navigation from "./Common/Navigation";
+import Footer from "./Common/Footer";
 import LocalityDesc from './Pages/LocalityDesc';
 
 function App() {
@@ -40,10 +46,17 @@ function App() {
           <Route path="/Agents" element={<Agents />} />
           <Route path="/AdminLandingpage" element={<AdminLanding />} />
           <Route path="/users" element={<AdminUsers />} />
-        </Routes>
+
         {/* <Footer /> */}
-      </BrowserRouter>
-    </div>
+        <Route path='/LocalityDescription' element={<LocalityDesc />} />
+        <Route path='/AgentDescription' element={<AgentDesc />} />
+        <Route path='/Projects' element={<Projects />} />
+        <Route path="/about-us" element={<About />} />
+        <Route path="/DevelopersDescription" element={<DevelopersDesc />} />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
+  </div>
   );
 }
 
