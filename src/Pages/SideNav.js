@@ -24,7 +24,7 @@ function SideNav() {
                     </li>
                     <li>
                         <FiHome />
-                        <Link to="/Propertypage">Properties</Link>
+                        <Link to="/CreatorProperty">Properties</Link>
                     </li>
                     <li>
                         <FiUsers />
@@ -37,18 +37,6 @@ function SideNav() {
                     <li>
                         <MdFavoriteBorder />
                         <Link to="/Favorite">Appointments</Link>
-                    </li>
-                    <li>
-                        <FaUser />
-                        <Link to="/createUser">Create User</Link>
-                    </li>
-                    <li>
-                        <MdAddHome />
-                        <Link to ="/CreateProperty">Create Property</Link>
-                    </li>
-                    <li>
-                        <MdOutlineSupportAgent />
-                        <Link to="/CreateAgent">Create Agent</Link>
                     </li>
                     <li>
                         <CiLogout />

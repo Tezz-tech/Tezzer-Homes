@@ -157,7 +157,3 @@ const LocalityDesc = () => {
   )
 }
 export default LocalityDesc;
-
-  );
-};
-export default LocalityDesc;
