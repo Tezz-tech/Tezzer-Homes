@@ -2170,12 +2170,22 @@ header {
 .agent-user-form{
   border: 1px solid gray;
   padding: 1em;
-  width: 90%;
+  width: 80%;
   margin: 50px auto;
 }
 .agent-user-form-inputs {
   display: flex;
   /* justify-content: space-between; */
+}
+.agent-user-form-inputs input{
+  width: 45%;
+  padding: 0.2em;
+  margin-left:auto;
+  margin-bottom: 1em;
+}
+.error{
+  color: red;
+  font-size: 0.8rem;
 }
 .agent-user-form input, .agent-user-form select {
   width: 90%;
@@ -2218,6 +2228,9 @@ header {
   width: 100%;
   height: 100px;
   padding: 0.2em 0.5em;
+}
+.add-home{
+  font-size:20px ;
 }
 
 .local-one {

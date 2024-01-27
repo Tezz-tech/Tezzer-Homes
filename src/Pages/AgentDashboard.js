@@ -11,7 +11,7 @@ const Agents = () => {
             <div className="Agents-dashboard-container">
                 <div className="Agents-dashboard-container-top">
                     <h2>Agents Management</h2>
-                    <Link to="/CreateAgentUser">
+                    <Link to="/create-agent">
                         <button className="create-new-agent-btn"><IoIosPersonAdd /></button>
                     </Link>
                 </div>

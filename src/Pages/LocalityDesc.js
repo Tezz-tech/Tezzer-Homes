@@ -1,9 +1,5 @@
-import Home from "../IMG/Home.jpeg";
+import Home from "../IMG/home.jpeg";
 import dlayout from "../IMG/layout-visualization-of-residential-area-70098-xxl.jpg";
-// import ted from "../IMG/ted.jpeg";
-// import penny from "../IMG/penny.jpeg";
-// import hero from "../IMG/hero.jpeg";
-// import fourstar from "../IMG/4stars-removebg-preview.png";
 const LocalityDesc = () => {
   return (
     <>

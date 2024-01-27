@@ -1,18 +1,18 @@
-import SideNav from "./SideNav";
+import AgentSideNav from "./AgentSideNav";
 import { FaBan } from "react-icons/fa";
 import { FaUserEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import { IoIosPersonAdd } from "react-icons/io";
 import { Link } from "react-router-dom";
 
-const AdminUsers = () => {
+const AgentUsers = () => {
     return (
         <div>
-            <SideNav />
+            <AgentSideNav />
             <div className="Agents-dashboard-container">
                 <div className="Agents-dashboard-container-top">
                     <h2>User Management</h2>
-                    <Link to = "/CreateUser">
+                    <Link to = "/create-Agent-users">
                         <button className="create-new-agent-btn"><IoIosPersonAdd /></button>
                     </Link>
                 </div>
@@ -52,4 +52,4 @@ const AdminUsers = () => {
         </div>
     )
 }
-export default AdminUsers;
+export default AgentUsers;
