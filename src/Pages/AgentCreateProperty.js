@@ -1,7 +1,7 @@
+import AgentSideNav from "./AgentSideNav";
 import React from 'react';
 import { useState } from 'react';
-import SideNav from './SideNav';
-const CreateProperty = () => {
+const AgentCreateProperty = () => {
     const [propertyName, setPropertyName] = useState("");
     const [propertyPrice, setPropertyPrice] = useState("");
     const [country, setCountry] = useState("");
@@ -89,7 +89,7 @@ const CreateProperty = () => {
     }
     return (
         <div>
-            <SideNav />
+            <AgentSideNav />
             <div className="CreateProperty">
                 <h1>Create Property</h1>
                 <div className="CreateProperty-container">
@@ -227,4 +227,4 @@ const CreateProperty = () => {
     )
 }
 
-export default CreateProperty
+export default AgentCreateProperty;

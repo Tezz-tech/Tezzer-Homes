@@ -3,6 +3,7 @@ import { FaBan } from "react-icons/fa";
 import { FaUserEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import { IoIosPersonAdd } from "react-icons/io";
+import { Link } from "react-router-dom";
 const Agents = () => {
     return (
         <div>
@@ -10,7 +11,9 @@ const Agents = () => {
             <div className="Agents-dashboard-container">
                 <div className="Agents-dashboard-container-top">
                     <h2>Agents Management</h2>
-                    <button className="create-new-agent-btn"><IoIosPersonAdd /></button>
+                    <Link to="/create-agent">
+                        <button className="create-new-agent-btn"><IoIosPersonAdd /></button>
+                    </Link>
                 </div>
                 <table className='creator-table'>
                     <thead>

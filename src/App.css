@@ -1534,6 +1534,10 @@ header {
   margin-top: 20px;
 }
 
+.creatorLogo-info h1{
+  font-size: 1.5rem;
+}
+
 .propertylisting-container {
   margin-top: 3em;
   padding: 1em 0;
@@ -2152,6 +2156,82 @@ header {
   padding-top: 10px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
+.AgentUser-dashboard-container{
+  margin-left: 17em;
+  padding: 1em 1em;
+  height: 100vh;
+}
+.AgentUser-dashboard-container p{
+  font-size: 1rem;
+}
+.AgentUser-dashboard-container h1{
+  font-size: 1.5rem;
+}
+.agent-user-form{
+  border: 1px solid gray;
+  padding: 1em;
+  width: 80%;
+  margin: 50px auto;
+}
+.agent-user-form-inputs {
+  display: flex;
+  /* justify-content: space-between; */
+}
+.agent-user-form-inputs input{
+  width: 45%;
+  padding: 0.2em;
+  margin-left:auto;
+  margin-bottom: 1em;
+}
+.error{
+  color: red;
+  font-size: 0.8rem;
+}
+.agent-user-form input, .agent-user-form select {
+  width: 90%;
+  padding: 0.2em;
+  margin-left:auto;
+  margin-bottom: 1em;
+  border-radius: 5px;
+  border: 1px solid gray;
+  outline: none;
+}
+.agent-user-form input:focus{
+  background-color: #f2f2f2;
+}
+.agent-user-form button{
+  padding: 0.2em 1em;
+  margin-left: 7em;
+  margin-top: 1em;
+  border-radius: 5px;
+  background: #2f2f2f;
+  color: #fff;
+  font-size: 1rem;
+}
+.agent-user-form button:hover{
+  background-color: #717171;
+}
+.CreatorProperty-container {
+  margin-left: 17em;
+  padding: 1em 1em;
+}
+.creator-table img{
+  width: 50px;
+  height: auto;
+}
+.CreatorProperty-container-top{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.CreateProperty-container textarea{
+  width: 100%;
+  height: 100px;
+  padding: 0.2em 0.5em;
+}
+.add-home{
+  font-size:20px ;
+}
 
 .local-one {
   width: 100%;
@@ -2241,6 +2321,7 @@ header {
   right: 0;
   bottom: 0;
   padding: 0.75rem 0;
+
   margin: 0 0 0 1.85rem;
   color: #282936;
   font-weight: 700;

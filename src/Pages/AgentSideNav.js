@@ -1,38 +1,34 @@
 
-import { MdAddHome, MdFavoriteBorder, MdOutlineSupportAgent } from "react-icons/md";
+import { MdFavoriteBorder } from "react-icons/md";
 import { CiLogout } from "react-icons/ci";
 import { Link } from "react-router-dom";
-import { FaHome, FaSearch, FaUser } from 'react-icons/fa';
-import { FiHome, FiUser, FiUsers } from 'react-icons/fi';
+import { FaHome } from 'react-icons/fa';
+import { FiHome, FiUser } from 'react-icons/fi';
 import Agentimg from "../IMG/ted.jpeg";
-function SideNav() {
+function AgentSideNav() {
     return (
         <div className='SideNav-container'>
             <div className="Creatorlogo">
             <h2>Admins</h2>
                 <div className="creatorLogo-info">
                     <img src={Agentimg} alt="img" />
-                    <h1>Edwins</h1>
-                    <p style={{fontWeight: "500"}}>(Merchant)</p>
+                    <h1>Precious</h1>
+                    <p style={{fontWeight: "500"}}>(Agent)</p>
                 </div>
             </div>
             <div className='SideNav-sec-one'>
                 <ul className='SideNav-sec-one-ul'>
                     <li>
                         <FaHome />
-                        <a href="/AdminDashboard">Dashboard</a>
+                        <a href="/AgentAdmin">Dashboard</a>
                     </li>
                     <li>
                         <FiHome />
-                        <Link to="/CreatorProperty">Properties</Link>
-                    </li>
-                    <li>
-                        <FiUsers />
-                        <Link to="/Agents">Agents</Link>
+                        <Link to="/AgentProperty">Properties</Link>
                     </li>
                     <li>
                         <FiUser />
-                        <Link to="/users">Users</Link>
+                        <Link to="/AgentUsers">Users</Link>
                     </li>
                     <li>
                         <MdFavoriteBorder />
@@ -47,4 +43,4 @@ function SideNav() {
         </div>
     )
 }
-export default SideNav;
+export default AgentSideNav;
