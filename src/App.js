@@ -25,8 +25,9 @@ import AgentCreateProperty from './Pages/AgentCreateProperty';
 import CreateAgent from './Pages/Create-Agent';
 import CreateUser from './Pages/createUser';
 import CreateAgentUser from './Pages/CreateAgentUsers';
+import Locality from './Pages/Locality';
 
-// Layout component with navigation and footer
+
 const Layout = ({ children }) => (
   <div>
     <Navigation />
@@ -44,7 +45,8 @@ function App() {
         <Route path="/DevelopersDescription" element={<Layout><DevelopersDesc /></Layout>} />
         <Route path="/LocalityDescription" element={<Layout><LocalityDesc /></Layout>} />
         <Route path="/AgentDescription" element={<Layout><AgentDesc /></Layout>} />
-        <Route path="/about-us" element={<About />} />
+        <Route path="/about-us" element={<Layout><About /></Layout>} />
+        <Route path="/Localities" element={<Layout><Locality /></Layout>} />
         <Route path="/AdminDashboard" element={<AdminDashboard />} />
         <Route path="/CreateProperty" element={<CreateProperty />} />
         <Route path="/Propertypage" element={<Propertypage />} />
@@ -53,7 +55,7 @@ function App() {
         <Route path="/AdminLandingpage" element={<AdminLanding />} />
         <Route path="/users" element={<AdminUsers />} />
         <Route path="/CreateUser" element={<CreateUser />} />
-        <Route path="/Projects" element={<Projects />} />
+        <Route path="/Projects" element= {<Layout><Projects /></Layout>} />
         <Route path="/CreatorProperty" element={<CreatorProperty />} />
         <Route path="/AgentLogin" element={<AgentLogin />} />
         <Route path="/AgentAdmin" element={<AgentAdmin />} />

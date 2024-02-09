@@ -40,7 +40,7 @@ function SideNav() {
                     </li>
                     <li>
                         <CiLogout />
-                        <Link to="">Logout</Link>
+                        <Link to="/AdminLandingpage">Logout</Link>
                     </li>
                 </ul>
             </div>

@@ -3,66 +3,149 @@ import { useState } from "react";
 
 const CreateAgentUser = () => {
 
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [phone, setPhone] = useState("");
-    const [password, setPassword] = useState("");
-    const [errors, setErrors] = useState({});
+    const [FirstName, setFirstName] = useState("");
+  const [LastName, setLastName] = useState("");
+  const [Email, setEmail] = useState("");
+  const [Password, setPassword] = useState("");
+  const [Phone, setPhone] = useState("");
+  const [errors, setErrors] = useState({});
 
-    const validate = () => {
-        let errors = {};
-        if (!name) {
-            errors.name = "Name is required";
-        }
-        if (!email) {
-            errors.email = "Email is required";
-        }
-        if (!phone) {
-            errors.phone = "Phone is required";
-        }
-        if (!password) {
-            errors.password = "<PASSWORD>";
-        }
-        setErrors(errors);
-        return Object.keys(errors).length === 0;
+  const validate = () => {
+    let errors = {};
+    if (!FirstName) {
+      errors.FirstName = "First Name is required";
     }
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        if (validate()) {
-            console.log(name, email, phone, password);
-        }
+    if (!LastName) {
+      errors.LastName = "Last Name is required";
     }
+    if (!Email) {
+      errors.Email = "Email is required";
+    }
+    if (!Password) {
+      errors.Password = "Password is required";
+    }
+    if (!Phone) {
+      errors.Phone = "Phone number is required";
+    }
+    setErrors(errors);
+    return Object.keys(errors).length === 0;
+  };
 
-    return (
-        <div>
-            <AgentSideNav />
-            <div className="AgentUser-dashboard-container">
-                <h1>Add New User</h1>
-                <p>Enter User Information below.</p>
-                <form className="agent-user-form" onSubmit={handleSubmit}>
-                    {errors.name && <p className="error">{errors.name}</p>}
-                    <div className="agent-user-form-inputs">
-                        <label for="Name">Name:</label>
-                        <input type="text" placeholder="Enter Name" onChange={(e) => setName(e.target.value)} />
-                    </div>
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-                    {errors.email && <p className="error">{errors.email}</p>}
-                    <div className="agent-user-form-inputs">
-                        <label for="Email">Email:</label>
-                        <input type="email" placeholder="Enter Email" value={email} onChange={(e) => setEmail(e.target.value)} />
-                    </div>
+    if (validate()) {
+      const userData = {
+        first_name: FirstName,
+        last_name: LastName,
+        email: Email,
+        phone: Phone,
+        password: Password,
+      };
 
-                    {errors.phone && <p className="error">{errors.phone}</p>}
-                    <div className="agent-user-form-inputs">
-                        <label for="Phone">Phone:</label>
-                        <input type="tel" placeholder="Enter Phone" value={phone} onChange={(e) => setPhone(e.target.value)} />
-                    </div>
-                
-                <button>Create</button>
-                </form>
-            </div>
-        </div>
-    )
-}
+      try {
+        const response = await fetch("http://property.reworkstaging.name.ng/v1/users", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(userData),
+        });
+
+        if (response.ok) {
+          alert("User created successfully");
+          setFirstName("");
+          setLastName("");
+          setEmail("");
+          setPassword("");
+          setPhone("");
+        } else {
+          console.error("Failed to create user");
+        }
+      } catch (error) {
+        console.error("Error creating user:", error);
+      }
+    }
+  };
+
+  return (
+    <div>
+      <AgentSideNav />
+      <div className="AgentUser-dashboard-container">
+        <h1>Add New User</h1>
+        <p>Enter User Information below.</p>
+        <form className="agent-user-form" onSubmit={handleSubmit}>
+          <div className="agent-user-form-inputs">
+            <label htmlFor="FirstName">First Name:</label>
+            <input
+              type="text"
+              id="FirstName"
+              placeholder="Enter First Name"
+              value={FirstName}
+              onChange={(e) => setFirstName(e.target.value)}
+            />
+            {errors.FirstName && (
+              <p className="error">{errors.FirstName}</p>
+            )}
+          </div>
+
+          <div className="agent-user-form-inputs">
+            <label htmlFor="LastName">Last Name:</label>
+            <input
+              type="text"
+              id="LastName"
+              placeholder="Enter Last Name"
+              value={LastName}
+              onChange={(e) => setLastName(e.target.value)}
+            />
+            {errors.LastName && (
+              <p className="error">{errors.LastName}</p>
+            )}
+          </div>
+
+          <div className="agent-user-form-inputs">
+            <label htmlFor="Password">Password:</label>
+            <input
+              type="password"
+              id="Password"
+              placeholder="Enter Password"
+              value={Password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            {errors.Password && (
+              <p className="error">{errors.Password}</p>
+            )}
+          </div>
+
+          <div className="agent-user-form-inputs">
+            <label htmlFor="Email">Email:</label>
+            <input
+              type="email"
+              id="Email"
+              placeholder="Enter Email"
+              value={Email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            {errors.Email && <p className="error">{errors.Email}</p>}
+          </div>
+
+          <div className="agent-user-form-inputs">
+            <label htmlFor="Phone">Phone:</label>
+            <input
+              type="tel"
+              id="Phone"
+              placeholder="Enter Phone"
+              value={Phone}
+              onChange={(e) => setPhone(e.target.value)}
+            />
+            {errors.Phone && <p className="error">{errors.Phone}</p>}
+          </div>
+
+          <button type="submit">Create</button>
+        </form>
+      </div>
+    </div>
+  );
+};
+
 export default CreateAgentUser;

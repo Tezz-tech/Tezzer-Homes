@@ -1,22 +1,57 @@
-import SideNav from "./SideNav";
-import { FaBan } from "react-icons/fa";
-import { FaUserEdit } from "react-icons/fa";
-import { MdDelete } from "react-icons/md";
-import { IoIosPersonAdd } from "react-icons/io";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';  // Import Axios
+import SideNav from './SideNav';
+import { FaBan, FaUserEdit } from 'react-icons/fa';
+import { MdDelete } from 'react-icons/md';
+import { IoIosPersonAdd } from 'react-icons/io';
+import { Link } from 'react-router-dom';
 
 const AdminUsers = () => {
+    const [users, setUsers] = useState([]);
+
+    useEffect(() => {
+        const fetchUsers = async () => {
+            try {
+                let getToken = localStorage.getItem("Admin_Token");
+                const response = await axios.get('http://property.reworkstaging.name.ng/v1/users', {
+                    params: {
+                        limit: 50,
+                        page: 2,
+                    },
+                    headers: {
+                        'Content-Type': 'application/json',
+                        Authorization: `Bearer ${getToken}`,
+                    },
+                });
+
+                if (response.status === 200) {
+                    const data = response.data;
+                    setUsers(data.data || []);
+                    console.log(data);
+                } else {
+                    console.error('Failed to fetch users');
+                }
+            } catch (error) {
+                console.error('Error fetching users:', error);
+            }
+        };
+
+        fetchUsers();
+    }, []); 
+
     return (
         <div>
             <SideNav />
             <div className="Agents-dashboard-container">
                 <div className="Agents-dashboard-container-top">
                     <h2>User Management</h2>
-                    <Link to = "/CreateUser">
-                        <button className="create-new-agent-btn"><IoIosPersonAdd /></button>
+                    <Link to="/CreateUser">
+                        <button className="create-new-agent-btn">
+                            <IoIosPersonAdd />
+                        </button>
                     </Link>
                 </div>
-                <table className='creator-table'>
+                <table className="creator-table">
                     <thead>
                         <tr>
                             <th>User Name</th>
@@ -26,30 +61,29 @@ const AdminUsers = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>adam pie</td>
-                            <td>Adampie@gmail.com</td>
-                            <td>123-456-7890</td>
-                            <td>
-                                <button className="creator-btn creator-delete-btn"><MdDelete /></button>
-                                <button className="creator-btn creator-edit-btn"><FaUserEdit /></button>
-                                <button className="creator-btn creator-ban-btn"><FaBan /></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Jane Smith</td>
-                            <td>Janesmith@gmail.com</td>
-                            <td>098-765-4321</td>
-                            <td>
-                                <button className="creator-btn creator-delete-btn"><MdDelete /></button>
-                                <button className="creator-btn creator-edit-btn"><FaUserEdit /></button>
-                                <button className="creator-btn creator-ban-btn"><FaBan /></button>
-                            </td>
-                        </tr>
+                        {users.map((user) => (
+                            <tr key={user.id}>
+                                <td>{user.first_name} {user.last_name}</td>
+                                <td>{user.email}</td>
+                                <td>{user.phone}</td>
+                                <td>
+                                    <button className="creator-btn creator-delete-btn">
+                                        <MdDelete />
+                                    </button>
+                                    <button className="creator-btn creator-edit-btn">
+                                        <FaUserEdit />
+                                    </button>
+                                    <button className="creator-btn creator-ban-btn">
+                                        <FaBan />
+                                    </button>
+                                </td>
+                            </tr>
+                        ))}
                     </tbody>
                 </table>
             </div>
         </div>
-    )
-}
+    );
+};
+
 export default AdminUsers;

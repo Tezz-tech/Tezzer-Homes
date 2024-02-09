@@ -1,40 +1,76 @@
 import SideNav from "./SideNav";
-import React from "react";
-import { useState } from "react";
-
+import React, { useState, useEffect } from "react";
 
 const CreateAgent = () => {
     const [agentName, setAgentName] = useState("");
-    const [agentUsername, setAgentUsername] = useState("");
     const [agentEmail, setAgentEmail] = useState("");
     const [agentPassword, setAgentPassword] = useState("");
-    const [agentPhoto, setAgentPhoto] = useState("");
     const [agentPhone, setAgentPhone] = useState("");
     const [agentCompany, setAgentCompany] = useState("");
-    const [agentAddress, setAgentAddress] = useState("");
     const [errors, setErrors] = useState({});
+    const [isLoading, setIsLoading] = useState(false);
+    const [isSuccess, setIsSuccess] = useState(false);
+    const [apiError, setApiError] = useState(null);
 
-    const handleSubmit = (e) => {
+    useEffect(() => {
+        // Additional logic can be added here if needed when the component mounts
+    }, []);
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(agentName, agentEmail, agentPassword, agentPhone, agentCompany, agentAddress);
         if (!validate()) {
             return;
         }
-    }
+
+        setIsLoading(true);
+
+        const createAgentData = {
+            full_name: agentName,
+            company: agentCompany,
+            email: agentEmail,
+            phone: agentPhone,
+            password: agentPassword,
+        };
+        let getToken = localStorage.getItem("Admin_Token");
+
+        try {
+            // Make API call here
+            const response = await fetch('http://property.reworkstaging.name.ng/v1/merchants/agents', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    "authorization" : `Bearer ${getToken}` 
+                },
+                body: JSON.stringify(createAgentData),
+            });
+
+            if (!response.ok) {
+                throw new Error('API request failed');
+            }
+
+            const data = await response.json();
+            setIsSuccess(true);
+            // Handle the successful API response, if needed
+            console.log(data);
+        } catch (error) {
+            setApiError('Error creating agent. Please try again.');
+            console.error(error);
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
     const validate = () => {
         let errors = {};
 
         if (!agentName) {
             errors.agentName = "Agent Name is required";
         }
-        if (!agentUsername) {
-            errors.agentUsername = "Agent Username is required";
-        }
         if (!agentEmail) {
             errors.agentEmail = "Agent Email is required";
         }
         if (!agentPassword) {
-            errors.agentPassword = "<PASSWORD>";
+            errors.agentPassword = "Password is required";
         }
         if (!agentPhone) {
             errors.agentPhone = "Agent Phone is required";
@@ -42,12 +78,11 @@ const CreateAgent = () => {
         if (!agentCompany) {
             errors.agentCompany = "Company Name is required";
         }
-        if (!agentAddress) {
-            errors.agentAddress = "Agent Address is required";
-        }
+
         setErrors(errors);
         return Object.keys(errors).length === 0;
-    }
+    };
+
     return (
         <div>
             <SideNav />
@@ -55,58 +90,44 @@ const CreateAgent = () => {
                 <h1>Add New Property Agent</h1>
                 <p>Enter (Agent) Information below. The Agents you add can log into your administration panel with the password and username you specify</p>
                 <form className="agent-user-form" onSubmit={handleSubmit}>
-
-                    {errors.agentName && <p style={{ color: "red" }}>{errors.agentName}</p>}
                     <div className="agent-user-form-inputs">
-                        <label for="Username">Username:</label>
-                        <input type="text" placeholder="Enter Username" value={agentName} onChange={(e) => setAgentName(e.target.value)} />
-                    </div>
-
-                    {errors.agentName && <p style={{ color: "red" }}>{errors.agentName}</p>}
-                    <div className="agent-user-form-inputs">
-                        <label for="Name">Name:</label>
+                        <label htmlFor="Name">Name:</label>
                         <input type="text" placeholder="Enter Name" value={agentName} onChange={(e) => setAgentName(e.target.value)} />
+                        {errors.agentName && <p style={{ color: "red" }}>{errors.agentName}</p>}
                     </div>
 
-                    {errors.agentEmail && <p style={{ color: "red" }}>{errors.agentEmail}</p>}
                     <div className="agent-user-form-inputs">
-                        <label for="Email">Email:</label>
+                        <label htmlFor="Email">Email:</label>
                         <input type="email" placeholder="Enter Email" value={agentEmail} onChange={(e) => setAgentEmail(e.target.value)} />
+                        {errors.agentEmail && <p style={{ color: "red" }}>{errors.agentEmail}</p>}
                     </div>
 
-                    {errors.agentPassword && <p style={{ color: "red" }}>{errors.agentPassword}</p>}
                     <div className="agent-user-form-inputs">
-                        <label for="Password">Password:</label>
+                        <label htmlFor="Password">Password:</label>
                         <input type="password" placeholder="Enter Password" value={agentPassword} onChange={(e) => setAgentPassword(e.target.value)} />
+                        {errors.agentPassword && <p style={{ color: "red" }}>{errors.agentPassword}</p>}
                     </div>
 
-                    {errors.agentPhoto && <p style={{ color: "red" }}>{errors.agentPhoto}</p>}
                     <div className="agent-user-form-inputs">
-                        <label for="Photo">Agent Photo:</label>
-                        <input type="file" value={agentPhoto} onChange={(e) => setAgentPhoto(e.target.value)} />
-                    </div>
-
-                    {errors.agentCompany && <p style={{ color: "red", fontSize : "15px" }}>{errors.agentCompany}</p>}
-                    <div>
-                        <label>Company</label>
-                        <input type="text" placeholder="Enter Company" value={agentCompany} onChange={(e) => setAgentCompany(e.target.value)} />
-                    </div>
-
-                    {errors.agentAddress && <p style={{ color: "red" }}>{errors.agentAddress}</p>}
-                    <div>
-                        <label>Address</label>
-                        <input type="text" placeholder="Enter Address" value={agentAddress} onChange={(e) => setAgentAddress(e.target.value)} />
-                    </div>
-
-                    {errors.agentPhone && <p style={{ color: "red" }}>{errors.agentPhone}</p>}
-                    <div className="agent-user-form-inputs">
-                        <label for="Phone">Phone:</label>
+                        <label htmlFor="Phone">Phone:</label>
                         <input type="tel" placeholder="Enter Phone" value={agentPhone} onChange={(e) => setAgentPhone(e.target.value)} />
+                        {errors.agentPhone && <p style={{ color: "red" }}>{errors.agentPhone}</p>}
                     </div>
+
+                    <div className="agent-user-form-inputs">
+                        <label htmlFor="Company">Company:</label>
+                        <input type="text" placeholder="Enter Company" value={agentCompany} onChange={(e) => setAgentCompany(e.target.value)} />
+                        {errors.agentCompany && <p style={{ color: "red", fontSize: "15px" }}>{errors.agentCompany}</p>}
+                    </div>
+
                     <button>Create</button>
+                    {isLoading && <p>Loading...</p>}
+                    {isSuccess && <p>Agent created successfully!</p>}
+                    {apiError && <p style={{ color: 'red' }}>{apiError}</p>}
                 </form>
             </div>
         </div>
-    )
-}
+    );
+};
+
 export default CreateAgent;

@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const AdminLogin = () => {
-
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [usernameError, setUsernameError] = useState('');
     const [passwordError, setPasswordError] = useState('');
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -18,7 +19,28 @@ const AdminLogin = () => {
             setUsernameError("");
             setPasswordError("");
         }
-    }
+
+        const adminDetails = {
+            email: username,
+            password: password
+        };
+
+        fetch('http://property.reworkstaging.name.ng/v1/auth/login', {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(adminDetails)
+        })
+            .then((resp) => resp.json())
+            .then((data) => {
+                console.log(data);
+                const adminToken = data.data.token;
+                localStorage.setItem("Admin_Token", adminToken);
+                navigate('/AdminDashboard');
+            })
+            .catch((err) => {
+                console.log(err.message);
+            });
+    };
 
     return (
         <div className="Admin-login-page">

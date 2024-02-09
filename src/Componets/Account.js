@@ -5,98 +5,98 @@ import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import MenuItem from '@mui/material/MenuItem';
-
 
 const Account = ({ open, handleClose }) => {
   const [activeTab, setActiveTab] = useState(0);
-  const [registerFullName, setRegisterFullName] = useState('');
-  const [registerEmail, setRegisterEmail] = useState('');
-  const [registerPassword, setRegisterPassword] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [loginEmail, setLoginEmail] = useState('');
   const [loginPassword, setLoginPassword] = useState('');
-  const [selectedCountry, setSelectedCountry] = useState('');
 
   const handleTabChange = (event, newValue) => {
     setActiveTab(newValue);
   };
 
   const handleRegister = async () => {
-    if (
-      selectedCountry === 'Select Country' ||
-      registerFullName === '' ||
-      registerEmail === '' ||
-      registerPassword === ''
-    ) {
-      console.log('Please fill in all required fields, including selecting a country.');
+    if (!firstName || !lastName || !email || !password) {
+      alert('Please fill in all required fields.');
       return;
     }
 
+    const userData = {
+      first_name: firstName,
+      last_name: lastName,
+      email: email,
+      phone: "0804784758",
+      password: password,
+    };
+
     try {
-      const response = await fetch('http://159.65.21.42:9000/users', {
+      const response = await fetch('http://property.reworkstaging.name.ng/v1/users', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          fullname: registerFullName,
-          email: registerEmail,
-          password: registerPassword,
-          phone: selectedCountry,
-        }),
+        body: JSON.stringify(userData),
       });
 
       if (response.ok) {
         console.log('Account created successfully');
         alert('Account created successfully');
+        // Reset form fields or perform other necessary actions
+        setFirstName('');
+        setLastName('');
+        setEmail('');
+        setPassword('');
       } else {
         console.error('Failed to create account');
         alert('Failed to create account');
       }
     } catch (error) {
       console.error('Error during registration:', error);
-      alert('Error during registration');
+      alert(`Error during registration: ${error.message || 'Unknown error'}`);
     }
   };
 
   const handleLogin = async () => {
+    if (!loginEmail || !loginPassword) {
+      alert('Please fill in all required fields.');
+      return;
+    }
+
     try {
-      const response = await fetch('https://6571b6e9d61ba6fcc013569c.mockapi.io/api/v1/users', {
-        method: 'GET',
+      const response = await fetch('http://property.reworkstaging.name.ng/v1/auth/login', {
+        method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
+        body: JSON.stringify({
+          email: loginEmail,
+          password: loginPassword,
+        }),
       });
-  
-      if (!response.ok) {
-        console.error('Failed to fetch user data for login');
-        alert('Login failed');
-        return;
-      }
-  
-      const users = await response.json();
-  
-      const matchedUser = users.find((user) => user.email === loginEmail && user.password === loginPassword);
-  
-      if (matchedUser) {
-        console.log('Login successful');
-        alert('Login successful');
-        sessionStorage.setItem('aliexpress_user', JSON.stringify(matchedUser));
-        handleClose(); 
+
+      const responseData = await response.json();
+
+      if (response.ok) {
+        console.log('Login successful:', responseData);
+        const userToken = responseData.data;
+        console.log(userToken);
+        
       } else {
-        console.error('Login failed. Incorrect email or password.');
-        alert('Login failed. Incorrect email or password.');
+        console.error('Login failed:', responseData.error || 'Unknown error');
+        alert(`Login failed: ${responseData.error || 'Unknown error'}`);
       }
     } catch (error) {
-      console.error('Error during login:', error);
-      alert('Error during login');
+      console.error('Error during login:', error.message || 'Unknown error');
+      alert(`Error during login: ${error.message || 'Unknown error'}`);
     }
   };
-  
 
-  const isRegisterFormValid =
-    registerFullName !== '' && registerEmail !== '' && registerPassword !== '' && selectedCountry !== 'Select Country';
-  const isLoginFormValid = loginEmail !== '' && loginPassword !== '';
+  const isRegisterFormValid = firstName && lastName && email && password;
+  const isLoginFormValid = loginEmail && loginPassword;
 
   const style = {
     padding: '40px 100px',
@@ -107,20 +107,6 @@ const Account = ({ open, handleClose }) => {
     textAlign: 'center',
     backgroundColor: 'white',
   };
-
-  const countries = [
-    { name: 'Select Country', flag: null },
-    { name: 'Nigeria', flag: '🇳🇬' },
-    { name: 'United States', flag: '🇺🇸' },
-    { name: 'Canada', flag: '🇨🇦' },
-    { name: 'United Kingdom', flag: '🇬🇧' },
-    { name: 'Australia', flag: '🇦🇺' },
-    { name: 'Germany', flag: '🇩🇪' },
-    { name: 'France', flag: '🇫🇷' },
-    { name: 'Japan', flag: '🇯🇵' },
-    { name: 'Brazil', flag: '🇧🇷' },
-    { name: 'South Africa', flag: '🇿🇦' },
-  ];
 
   return (
     <Modal
@@ -134,55 +120,46 @@ const Account = ({ open, handleClose }) => {
           value={activeTab}
           onChange={handleTabChange}
           centered
-          sx={{ mt: 2, backgroundColor: 'white', width: '600px', margin: 'auto', marginTop: '150px !important',borderTopLeftRadius: '10px',
-          borderTopRightRadius: '10px', }}
+          sx={{ mt: 2, backgroundColor: 'white', width: '600px', margin: 'auto', marginTop: '150px !important', borderTopLeftRadius: '10px', borderTopRightRadius: '10px' }}
         >
-          <Tab label="Register"  />
+          <Tab label="Register" />
           <Tab label="Login" />
         </Tabs>
         {activeTab === 0 ? (
           <Box sx={style}>
             <TextField
-              label="Full Name"
+              label="First Name"
               fullWidth
-              value={registerFullName}
-              onChange={(e) => setRegisterFullName(e.target.value)}
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
               sx={{ mt: 2 }}
             />
             <TextField
-              select
-              label="Select Country"
+              label="Last Name"
               fullWidth
-              value={selectedCountry}
-              onChange={(e) => setSelectedCountry(e.target.value)}
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
               sx={{ mt: 2 }}
-            >
-              {countries.map((country) => (
-                <MenuItem key={country.name} value={country.name}>
-                  {country.name}
-                </MenuItem>
-              ))}
-            </TextField>
+            />
             <TextField
               label="Email"
               fullWidth
-              value={registerEmail}
-              onChange={(e) => setRegisterEmail(e.target.value)}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               sx={{ mt: 2 }}
             />
             <TextField
               label="Password"
               type="password"
               fullWidth
-              value={registerPassword}
-              onChange={(e) => setRegisterPassword(e.target.value)}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               sx={{ mt: 2 }}
             />
             <Button
               variant="contained"
               fullWidth
-              sx={{ mt: 2, backgroundColor: '#ff3b03', padding: "14px", borderRadius: "30px", fontWeight: "bold", fontSize: "18px", '&:hover': {
-                backgroundColor: '#ff3b03',}, }}
+              sx={{ mt: 2, backgroundColor: '#ff3b03', padding: '14px', borderRadius: '30px', fontWeight: 'bold', fontSize: '18px', '&:hover': { backgroundColor: '#ff3b03' } }}
               disabled={!isRegisterFormValid}
               onClick={handleRegister}
             >
@@ -210,8 +187,7 @@ const Account = ({ open, handleClose }) => {
               variant="contained"
               color="primary"
               fullWidth
-              sx={{ mt: 2, backgroundColor: '#ff3b03', padding: "14px", borderRadius: "30px", fontWeight: "bold", fontSize: "18px", '&:hover': {
-                backgroundColor: '#ff3b03',}, }}
+              sx={{ mt: 2, backgroundColor: '#ff3b03', padding: '14px', borderRadius: '30px', fontWeight: 'bold', fontSize: '18px', '&:hover': { backgroundColor: '#ff3b03' } }}
               disabled={!isLoginFormValid}
               onClick={handleLogin}
             >
