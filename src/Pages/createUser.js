@@ -1,7 +1,7 @@
 import SideNav from "./SideNav";
 import React from "react";
 import { useState } from "react";
-const CreateUser = () => {
+const CreateUser = (props) => {
     const [UserName, setUserName] = useState("");
     const [Email, setEmail] = useState("");
     const [Password, setPassword] = useState("");
@@ -70,7 +70,7 @@ const CreateUser = () => {
                     </div>
                     {errors.Phone && <p className="error">{errors.Phone}</p>}
 
-                <button>Create</button>
+                <button style={props.Color}>Create</button>
                 </form>
             </div>
         </div>

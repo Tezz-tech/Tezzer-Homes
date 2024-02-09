@@ -31,6 +31,11 @@ import CreateAgentUser from './Pages/CreateAgentUsers';
 // import Footer from "./Common/Footer";
 
 function App() {
+  const btnColor= {
+    color: "white",
+    border: "none",
+    backgroundColor: "red"
+  }
   return (
     <div>
       <BrowserRouter>
@@ -54,7 +59,7 @@ function App() {
           <Route path='/create-agent' element= {<CreateAgent />}></Route>
           <Route path="/AdminLandingpage" element={<AdminLanding />} />
           <Route path="/users" element={<AdminUsers />} />
-          <Route path='/CreateUser' element={<CreateUser />}></Route>
+          <Route path='/CreateUser' element={<CreateUser Color={btnColor} />}></Route>
           {/* <Footer /> */}
           <Route path='/Projects' element={<Projects />} />
           <Route path='/CreatorProperty' element={<CreatorProperty />}></Route>
